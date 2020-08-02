@@ -12,12 +12,15 @@
       <button id="SubmitUser">Submit User</button>
       </section>      
       <script type = "text/javascript">
-      var userName = document.getElementById('UserName').value;
+      
+document.getElementById('SubmitUser').addEventListener('click',addUser);
+function addUser(){
+   var userName = document.getElementById('UserName').value;
       var userMail = document.getElementById('UserMail').value;
       var userPosition = document.getElementById('UserPosition').value;
 
-document.getElementById('SubmitUser').addEventListener('click',addUser);
-function addUser(){
+   
+   
     const csrftoken  = getCookie('csrftoken');
     var data = {id:10 , name:userName, email:userMail, position:userPosition};
     console.log(data);
